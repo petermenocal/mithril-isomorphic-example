@@ -1,12 +1,12 @@
-'use strict'
+"use strict"
 
-var m = require('mithril')
+var m = require("mithril")
 
 function getTitle (vnode) {
   if (vnode.state.getTitle) {
     return vnode.state.getTitle()
   }
-  return 'isomorphic mithril application'
+  return "isomorphic mithril application"
 }
 
 module.exports = function (view) {
@@ -18,15 +18,16 @@ module.exports = function (view) {
   }
   return function (vnode) {
     return [
-      m('!doctype[html]'),
-      m('html[lang=en]', [
-        m('head', [
-          m('title', getTitle(vnode)),
-          m('meta[charset=utf-8]'),
-          m('script[src=/index.js]')
+      m("!doctype[html]"),
+      m("html[lang=en]", [
+        m("head", [
+          m("title", getTitle(vnode)),
+          m("meta[charset=utf-8]"),
+          m("script[src=/index.js]"),
+          m("link", {rel: "stylesheet", href: "https://unpkg.com/tachyons/css/tachyons.min.css"})
         ])
       ]),
-      m('body', view(vnode))
+      m("body", view(vnode))
     ]
   }
 }
