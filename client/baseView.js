@@ -6,7 +6,7 @@ function getTitle (vnode) {
   if (vnode.state.getTitle) {
     return vnode.state.getTitle()
   }
-  return "isomorphic mithril application"
+  return "Geeky Pixel"
 }
 
 module.exports = function (view) {
