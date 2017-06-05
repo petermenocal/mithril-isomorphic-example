@@ -6,7 +6,7 @@ function getTitle (vnode) {
   if (vnode.state.getTitle) {
     return vnode.state.getTitle()
   }
-  return "Geeky Pixel"
+  return "Geeky Pixel" //page title
 }
 
 module.exports = function (view) {
